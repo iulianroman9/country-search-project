@@ -5,15 +5,40 @@ body {
     padding: 0;
 }
 
+.functionality {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.functionality * {
+    margin: 5px;
+}
+
+.search-button {
+    cursor: pointer;
+}
+
 header h1 {
     color: white;
     margin: 20px 0;
     text-align: center;
 }
 
-header input {
-    display: block;
-    margin: 20px auto;
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.search-button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgb(218, 206, 206);
+    border-radius: 5px;
 }
 
 .countries-list {
@@ -22,20 +47,17 @@ header input {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    color: white;
 }
 
 .countries-list li {
-    background-color: rgb(218, 206, 206);
+    background-color: rgb(81, 74, 80);
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 20px auto;
     min-width: 400px;
     text-align: center;
-}
-
-.countries-list li img {
-    display: block;
-    margin: 0 auto;
+    padding-top: 10px;
 }
 
 .countries-list li p, .countries-list li h3{
@@ -47,7 +69,5 @@ li a {
 }
 
 li img {
-    display: block;
-    margin: 0 auto;
     border-radius: 5px;
 }
