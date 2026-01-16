@@ -74,13 +74,17 @@ function displayCountries(countries) {
 }
 
 const searchInput = document.getElementsByClassName('search-input')[0];
+searchInput.addEventListener('input', searchCountry);
 
-searchInput.addEventListener('input', (event) => {
-    const inputText = event.target.value.toLowerCase();
+const searchButton = document.getElementsByClassName('search-button')[0];
+searchButton.addEventListener('click', searchCountry);
+
+function searchCountry() {
+    const inputText = searchInput.value.toLowerCase();
 
     const filteredCountries = countries.filter(
         country => country.name.toLowerCase().includes(inputText)
     );
-
+    
     displayCountries(filteredCountries);
-});
+}
