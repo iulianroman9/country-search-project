@@ -10,13 +10,8 @@ async function fetchCountries() {
         }
         
         const result = await response.json();
-        // console.log(result);
-
         countries = result.map(extractCountryFields);
         countries = countries.sort((a, b) => a.name.localeCompare(b.name));
-        // console.log(countries);
-
-        displayCountries(countries);
     }
     catch (error) {
         console.error('Error fetching countries:', error);
@@ -81,6 +76,18 @@ searchButton.addEventListener('click', searchCountry);
 
 function searchCountry() {
     const inputText = searchInput.value.toLowerCase();
+    const countriesList = document.getElementsByClassName('countries-list')[0];
+    
+    if (inputText.length < 3) {
+        countriesList.innerHTML = '';
+
+        const messageItem = document.createElement('li');
+        messageItem.style.paddingBottom = '10px';
+        messageItem.textContent = 'Please enter at least 3 characters to search.';
+        
+        countriesList.appendChild(messageItem);
+        return; 
+    }
 
     const filteredCountries = countries.filter(
         country => country.name.toLowerCase().includes(inputText)
