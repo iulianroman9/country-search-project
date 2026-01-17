@@ -67,6 +67,13 @@ header h1 {
     background-color: var(--accent-hover);
 }
 
+.search-error {
+    color: #ff6b6b;
+    margin-top: 10px;
+    font-size: 14px;
+    height: 20px;
+}
+
 /* list */
 
 .countries-list {

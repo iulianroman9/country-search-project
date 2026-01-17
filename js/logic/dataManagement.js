@@ -7,7 +7,7 @@ function extractCountryFields(country) {
         capital: country.capital ? country.capital[0] : 'N/A',
         languages: country.languages ? Object.values(country.languages)[0] : 'N/A',
         map: country.maps.googleMaps,
-        population: country.population.toLocaleString(), // Added formatting
+        population: country.population.toLocaleString(),
         currency: country.currencies ? Object.keys(country.currencies)[0] : 'N/A',
     };
 }
