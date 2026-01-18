@@ -49,6 +49,14 @@ export function getSearchValue() {
 }
 
 export function setupInputListener(handleSearch) {
-    searchInput.addEventListener('input', handleSearch);
+    let timer;
+
+    searchInput.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            handleSearch();
+        }, 300);
+    });
+
     searchButton.addEventListener('click', handleSearch);
 }
