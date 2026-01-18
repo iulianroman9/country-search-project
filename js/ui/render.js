@@ -1,9 +1,11 @@
 const countriesList = document.querySelector('.countries-list');
 const searchInput = document.querySelector('.search-input');
 const searchButton = document.querySelector('.search-button');
+const errorContainer = document.querySelector('.search-error');
 
 export function displayCountries(countries) {
     countriesList.innerHTML = '';
+    errorContainer.textContent = '';
 
     countries.forEach(country => {
         const listItem = document.createElement('li');
@@ -39,10 +41,7 @@ export function displayCountries(countries) {
 
 export function displayError(message) {
     countriesList.innerHTML = '';
-    const messageItem = document.createElement('li');
-    messageItem.style.padding = '20px';
-    messageItem.textContent = message;
-    countriesList.appendChild(messageItem);
+    errorContainer.textContent = message;
 }
 
 export function getSearchValue() {

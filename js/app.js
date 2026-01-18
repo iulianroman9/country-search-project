@@ -16,7 +16,12 @@ function handleSearch() {
 
     const filteredData = Data.filterCountries(query);
 
-    UI.displayCountries(filteredData);
+    if (filteredData.length === 0) {
+        UI.displayError('No countries match your search.');
+    }
+    else {
+        UI.displayCountries(filteredData);
+    }
 }
 
 async function initApp() {
