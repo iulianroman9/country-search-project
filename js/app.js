@@ -1,6 +1,7 @@
 import { fetchCountries } from "./services/api.js";
-import * as Data from "./logic/dataManagement.js";
+import * as Data from "./services/countryService.js";
 import * as UI from "./ui/render.js";
+import * as StorageService from "./services/storageService.js";
 
 function handleSearch() {
     const query = UI.getSearchValue();
@@ -20,6 +21,8 @@ function handleSearch() {
         UI.displayError('No countries match your search.');
     }
     else {
+        StorageService.addRecentSearch(query);
+        UI.displaySearchHistory(StorageService.getSearchHistory());
         UI.displayCountries(filteredData);
     }
 }
@@ -30,8 +33,9 @@ async function initApp() {
     if (data) {
         Data.processCountries(data);
     }
-
+    UI.displaySearchHistory(StorageService.getSearchHistory());
     UI.setupInputListener(handleSearch);
+    UI.setupHistoryListener(handleSearch);
 }
 
 initApp();
