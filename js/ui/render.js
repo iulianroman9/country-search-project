@@ -1,7 +1,33 @@
+const historyList = document.querySelector('.recent-searches');
 const countriesList = document.querySelector('.countries-list');
 const searchInput = document.querySelector('.search-input');
 const searchButton = document.querySelector('.search-button');
 const errorContainer = document.querySelector('.search-error');
+
+export function displaySearchHistory(history) {
+    historyList.innerHTML = '';
+
+    if (!history || history.length === 0) {
+        hideSearchHistory();
+        return;
+    }
+
+    showSearchHistory();
+
+    history.forEach(query => {
+        const li = document.createElement('li');
+        li.textContent = query;
+        historyList.appendChild(li);
+    });
+}
+
+export function hideSearchHistory() {
+    historyList.classList.add('hidden');
+}
+
+export function showSearchHistory() {
+    historyList.classList.remove('hidden');
+}
 
 export function displayCountries(countries) {
     countriesList.innerHTML = '';
@@ -59,4 +85,12 @@ export function setupInputListener(handleSearch) {
     });
 
     searchButton.addEventListener('click', handleSearch);
+}
+
+export function setupHistoryListener(handleSearch) {
+    historyList.addEventListener('click', (event) => {
+        if (event.target.tagName.toLowerCase() === 'li') {
+            searchInput.value = event.target.textContent;
+            handleSearch();
+        }});
 }

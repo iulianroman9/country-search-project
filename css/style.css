@@ -74,6 +74,37 @@ header h1 {
     height: 20px;
 }
 
+.recent-searches {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px auto 0 auto;
+    max-width: 1000px;
+    display:flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.recent-searches li {
+    background-color: var(--bg-card);
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.recent-searches li:hover {
+    background-color: var(--accent);
+    color: #1a1a1a;
+}
+
+.recent-searches.hidden {
+    display: none;
+}
+
 /* list */
 
 .countries-list {
