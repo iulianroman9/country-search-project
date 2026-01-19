@@ -13,6 +13,7 @@ async function initApp() {
     const favorites = StorageService.getFavoriteCountries();
     UI.displayFavorites(favorites);
     UI.setupFavoritesToggle();
+    UI.setupFavoritesListener(handleSearch);
 
     UI.displaySearchHistory(StorageService.getSearchHistory());
     UI.setupInputListener(handleSearch);

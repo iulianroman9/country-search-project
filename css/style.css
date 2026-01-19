@@ -156,16 +156,25 @@ header h1 {
     width: 110px;
 }
 
+.favorites-list li span {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.favorites-list li:hover {
+    background-color: var(--accent);
+    cursor: pointer;
+}
+
+.favorites-list li:hover span {
+    color: #1a1a1a;
+}
+
 .favorites-list li img {
     width: 40px;
     border-radius: 4px;
     display: block;
     margin: 0 auto 5px auto;
-}
-
-.favorites-list li span {
-    font-size: 0.9rem;
-    color: var(--text-main);
 }
 
 .star-btn {

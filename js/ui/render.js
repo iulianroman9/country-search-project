@@ -144,3 +144,13 @@ export function setupHistoryListener(handleSearch) {
             handleSearch();
         }});
 }
+
+export function setupFavoritesListener(handleSearch) {
+    favoritesList.addEventListener('click', (event) => {
+        if (event.target.tagName.toLowerCase() === 'li' || event.target.tagName.toLowerCase() === 'span') {
+            const countryName = event.target.querySelector('span').textContent || event.target.textContent;
+            searchInput.value = countryName;
+            handleSearch();
+        }
+    });
+}
