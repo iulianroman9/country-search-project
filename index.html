@@ -6,23 +6,31 @@
     <title>Countries</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Country Search Application</h1>
-        <div class="functionality">
-            <input type="text" class="search-input" placeholder="Search for a country...">
-            <button class="search-button">Search</button>
 
-        </div>
-        <div class="search-error"></div>
-        <ul class="recent-searches"></ul>
+        <search class="functionality">
+            <input type="text" class="search-input" placeholder="Search for a country..." aria-label="Search for a country">
+            <button class="search-button">Search</button>
+        </search>
+
+        <p class="search-error" role="alert"></p>
+
+        <nav aria-label="Recent searches">
+            <ul class="recent-searches"></ul>
+        </nav>
     </header>
     <main>
-        <div class="favorites hidden">
+        <section class="favorites hidden" aria-label="Favorite countries">
             <button class="favorites-toggle">Favorites</button>
             <ul class="favorites-list hidden"></ul>
-        </div>
-        <ul class="countries-list"></ul>
+        </section>
+
+        <section aria-label="Search results">
+            <ul class="countries-list"></ul>
+        </section>
     </main>
     <script src="./js/app.js" type="module"></script>
 </body>
