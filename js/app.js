@@ -3,6 +3,27 @@ import * as Data from "./services/countryService.js";
 import * as UI from "./ui/render.js";
 import * as StorageService from "./services/storageService.js";
 
+async function initApp() {
+    const data = await fetchCountries();
+    console.log(data);
+    if (data) {
+        Data.processCountries(data);
+    }
+
+    const favorites = StorageService.getFavoriteCountries();
+    UI.displayFavorites(favorites);
+    UI.setupFavoritesToggle();
+
+    UI.displaySearchHistory(StorageService.getSearchHistory());
+    UI.setupInputListener(handleSearch);
+    UI.setupHistoryListener(handleSearch);
+}
+
+function handleFavoriteToggle(country) {
+    const updatedFavorites = StorageService.toggleFavorite(country);
+    UI.displayFavorites(updatedFavorites);
+}
+
 function handleSearch() {
     const query = UI.getSearchValue();
 
@@ -10,7 +31,7 @@ function handleSearch() {
         if(query.length > 0) {
             UI.displayError('Please enter at least 3 characters to search.');
         } else {
-            UI.displayCountries([]); 
+            UI.displayCountries([], handleFavoriteToggle); 
         }
         return;
     }
@@ -23,19 +44,8 @@ function handleSearch() {
     else {
         StorageService.addRecentSearch(query);
         UI.displaySearchHistory(StorageService.getSearchHistory());
-        UI.displayCountries(filteredData);
+        UI.displayCountries(filteredData, handleFavoriteToggle);
     }
-}
-
-async function initApp() {
-    const data = await fetchCountries();
-    console.log(data);
-    if (data) {
-        Data.processCountries(data);
-    }
-    UI.displaySearchHistory(StorageService.getSearchHistory());
-    UI.setupInputListener(handleSearch);
-    UI.setupHistoryListener(handleSearch);
 }
 
 initApp();
