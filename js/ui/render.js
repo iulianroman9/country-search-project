@@ -147,8 +147,12 @@ export function setupHistoryListener(handleSearch) {
 
 export function setupFavoritesListener(handleSearch) {
     favoritesList.addEventListener('click', (event) => {
-        if (event.target.tagName.toLowerCase() === 'li' || event.target.tagName.toLowerCase() === 'span') {
-            const countryName = event.target.querySelector('span').textContent || event.target.textContent;
+        const clicked = event.target.closest('li');
+
+        if (clicked) {
+            const span = clicked.querySelector('span');
+
+            const countryName = span ? span.textContent : clicked.textContent;
             searchInput.value = countryName;
             handleSearch();
         }
