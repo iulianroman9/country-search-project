@@ -1,0 +1,9 @@
+:root {
+    --bg-body: #232323;
+    --bg-card: #2e3035;
+    --text-main: #f0f0f0;
+    --text-muted: #aaaaaa;
+    --accent: #81b29a; 
+    --accent-hover: #9cc5b1;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
