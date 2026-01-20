@@ -22,6 +22,10 @@ header h1 {
     flex-wrap: wrap;
 }
 
+.search-label.hidden {
+    display: none;
+}
+
 .search-input {
     border-radius: 1.5rem;
     padding: 0.75rem 1.25rem;
