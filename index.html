@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Website that uses restcountries's api to search for and display some details about a country.">
+    <meta name="description" content="Website that uses restcountries' api to search for and display some details about a country.">
     <title>Countries</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -14,11 +14,17 @@
 
         <search class="functionality">
             <label for="search" class="search-label hidden">Search countries</label>
-            <input id="search" type="text" class="search-input" placeholder="Search for a country...">
+            <input
+             id="search" 
+             type="text" 
+             class="search-input" 
+             placeholder="Search for a country..." 
+             aria-errormessage="search-err-msg" 
+             aria-invalid="true"
+            >
             <button class="search-button">Search</button>
         </search>
-
-        <p class="search-error" role="status"></p>
+        <p id="search-err-msg" class="search-error" role="status"></p>
 
         <nav aria-label="Recent searches">
             <ul class="recent-searches"></ul>

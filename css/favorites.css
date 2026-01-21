@@ -67,21 +67,3 @@
     display: block;
     margin: 0 auto 0.3rem auto;
 }
-
-.star-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #555;
-    cursor: pointer;
-    transition: color 0.2s;
-    z-index: 999;
-    line-height: 1;
-}
-
-.star-btn:hover, .star-btn.active {
-    color: #ffd700;
-}
