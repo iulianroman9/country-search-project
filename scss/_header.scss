@@ -1,21 +1,22 @@
+@use 'variables' as *;
+
 header {
-    background-color: var(--bg-card);
+    background-color: $bg-card;
     padding: 2rem 1.25rem;
     text-align: center;
-    box-shadow: var(--shadow);
-}
+    box-shadow: $shadow;
 
-header h1 {
-    margin: 0 0 2rem 0;
-    color: var(--accent);
-    font-size: 2rem;
+    h1 {
+        margin: 0 0 2rem 0;
+        color: $accent;
+        font-size: 2rem;
+    }
 }
 
 .functionality {
     display: flex;
     justify-content: center;
     gap: 1.25rem;
-
     width: 90%;
     max-width: 40rem;
     margin: 0 auto;
@@ -37,25 +38,24 @@ header h1 {
 
     outline: none;
     transition: all 0.3s ease;
-}
 
-.search-input:focus {
-    border-color: var(--accent);
+    &:focus {
+        border-color: $accent;
+    }
 }
-
 .search-button {
     padding: 0.75rem 2rem;
     font-size: 1rem;
     border: none;
     border-radius: 3rem;
-    background-color: var(--accent);
+    background-color: $accent;
     color: #1a1a1a;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
-}
 
-.search-button:hover {
-    background-color: var(--accent-hover);
+    &:hover {
+        background-color: $accent-hover;
+    }
 }
 
 .search-error {
@@ -75,24 +75,24 @@ header h1 {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-}
+    
+    &.hidden {
+        display: none;
+    }
 
-.recent-searches li {
-    background-color: var(--bg-card);
-    padding: 0.5rem 1rem;
-    border-radius: 1.25rem;
-    box-shadow: var(--shadow);
-    font-size: 1rem;
-    color: var(--text-main);
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
+    li {
+        background-color: $bg-card;
+        padding: 0.5rem 1rem;
+        border-radius: 1.25rem;
+        box-shadow: $shadow;
+        font-size: 1rem;
+        color: $text-main;
+        cursor: pointer;
+        transition: background-color 0.2s;
 
-.recent-searches li:hover {
-    background-color: var(--accent);
-    color: #1a1a1a;
-}
-
-.recent-searches.hidden {
-    display: none;
+        &:hover {
+            background-color: $accent;
+            color: #1a1a1a;
+        }
+    }
 }
