@@ -41,6 +41,25 @@ export function displayCountries(countries, favToggle) {
     countries.forEach(country => {
         const listItem = document.createElement('li');
 
+        const imgDiv = document.createElement('div');
+        imgDiv.className = 'card-image';
+
+        const img = document.createElement('img');
+        img.src = country.flag;
+        img.alt = `Flag of ${country.name}`;
+        imgDiv.appendChild(img);
+
+        //details = header + info
+        const detailsDiv = document.createElement('div');
+        detailsDiv.className = 'card-details';
+
+        //header
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'card-header';
+
+        const hName = document.createElement('h1');
+        hName.textContent = country.name;
+
         const starBtn = document.createElement('button');
         starBtn.className = 'star-btn';
         starBtn.textContent = '★'
@@ -49,17 +68,17 @@ export function displayCountries(countries, favToggle) {
             starBtn.classList.add('active');
         }
 
-        starBtn.addEventListener('click', () => {
+        starBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             favToggle(country); 
             starBtn.classList.toggle('active');
         });
 
-        const img = document.createElement('img');
-        img.src = country.flag;
-        img.width = 75;
+        headerDiv.append(hName, starBtn);
 
-        const hName = document.createElement('h3');
-        hName.textContent = country.name;
+        //info
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'card-info';
 
         const pCapital = document.createElement('p');
         pCapital.textContent = `Capital: ${country.capital}`;
@@ -67,18 +86,22 @@ export function displayCountries(countries, favToggle) {
         const pLang = document.createElement('p');
         pLang.textContent = `Language: ${country.languages}`;
 
-        const aMap = document.createElement('a');
-        aMap.href = country.map;
-        aMap.target = '_blank';
-        aMap.textContent = 'Google Maps';
-
         const pPopulation = document.createElement('p');
         pPopulation.textContent = `Population: ${country.population}`;
 
         const pCurrency = document.createElement('p');
         pCurrency.textContent = `Currency: ${country.currency}`;
 
-        listItem.append(starBtn, img, hName, pCapital, pLang, aMap, pPopulation, pCurrency);
+        const aMap = document.createElement('a');
+        aMap.href = country.map;
+        aMap.target = '_blank';
+        aMap.textContent = 'Google Maps';
+
+        infoDiv.append(pCapital, pLang, pPopulation, pCurrency, aMap);
+
+        detailsDiv.append(headerDiv, infoDiv);
+
+        listItem.append(imgDiv, detailsDiv);
         countriesList.appendChild(listItem);
     });
 }
