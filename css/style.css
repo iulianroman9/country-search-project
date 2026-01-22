@@ -9,6 +9,20 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  display: flex;
+  gap: 0rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+main {
+  flex: 2 1;
+  display: flex;
+  gap: 0rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 header {
@@ -186,7 +200,8 @@ header h1 {
   list-style-type: none;
   max-width: 40rem;
   padding: 1.25rem;
-  margin: 1.25rem auto;
+  margin: 0 auto;
+  margin-block-start: 0;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -290,6 +305,22 @@ header h1 {
 .card-info a:hover {
   color: #9cc5b1;
   border-bottom-style: solid;
+}
+
+footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #2e3035;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 0rem;
+}
+footer h1 {
+  font-size: 1rem;
+  color: #81b29a;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,8 +5,8 @@
     list-style-type: none;
     max-width: 40rem;
     padding: 1.25rem;
-    margin: 1.25rem auto;
-
+    margin: 0 auto;
+    margin-block-start: 0;
     @include mixins.flexbox-container($gap: 1, $flexDirection: column);
 
     li {
