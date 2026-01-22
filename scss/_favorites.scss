@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins';
 
 .favorites {
     margin: 1.25rem auto;
@@ -10,55 +11,33 @@
 }
 
 .favorites-toggle {
-    background-color: $bg-card;
-    color: $text-main;
+    @include mixins.card-style();
+    @include mixins.font-style(1, $text-main);
+    @include mixins.hover-effect();
+    
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    box-shadow: $shadow;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: $accent;
-        color: #1a1a1a;
-    }
 }
 
 .favorites-list {
+    @include mixins.flexbox-container();
+
     list-style: none;
     padding: 0;
     margin-top: 0.75rem;
-    display:flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
 
     &.hidden {
         display: none;
     }
 
     li {
-        background-color: $bg-card;
-        padding: 0.75rem;
-        border-radius: 0.75rem;
+        @include mixins.card-style();
+        @include mixins.hover-effect();
+
         text-align: center;
-        box-shadow: $shadow;
         width: 7rem;
 
-        &:hover {
-            background-color: $accent;
-            cursor: pointer;
-
-            span {
-                color: #1a1a1a;
-            }
-        }
-
         span {
-            font-size: 0.9rem;
-            color: $text-main;
+            @include mixins.font-style(0.9, $text-main);
         }
 
         img {

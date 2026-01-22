@@ -1,26 +1,23 @@
 @use 'variables' as *;
+@use 'mixins';
 
 header {
-    background-color: $bg-card;
-    padding: 2rem 1.25rem;
     text-align: center;
-    box-shadow: $shadow;
+    @include mixins.card-style(1,0);
 
     h1 {
-        margin: 0 0 2rem 0;
-        color: $accent;
-        font-size: 2rem;
+        @include mixins.font-style(2, $accent);
+        
+        margin: 0 0 1rem 0;
     }
 }
 
 .functionality {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
+    @include mixins.flexbox-container(1.25);
+
     width: 90%;
     max-width: 40rem;
     margin: 0 auto;
-    flex-wrap: wrap;
 }
 
 .search-label.hidden {
@@ -28,10 +25,11 @@ header {
 }
 
 .search-input {
-    border-radius: 1.5rem;
+    @include mixins.font-style(1, #000);
+
     padding: 0.75rem 1.25rem;
     border: 2px solid transparent;
-    font-size: 1rem;
+    border-radius: 1.5rem;
 
     width: 100%;
     max-width: 20rem;
@@ -43,56 +41,35 @@ header {
         border-color: $accent;
     }
 }
+
 .search-button {
+    @include mixins.hover-effect($textColor: #fff);
+    
     padding: 0.75rem 2rem;
     font-size: 1rem;
     border: none;
     border-radius: 3rem;
     background-color: $accent;
-    color: #1a1a1a;
-    cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-
-    &:hover {
-        background-color: $accent-hover;
-    }
 }
 
 .search-error {
-    color: #ff6b6b;
-    margin-top: 0.75rem;
-    font-size: 1rem;
-    height: 1.25rem;
+    @include mixins.font-style(1, #ff6b6b);
 }
 
 .recent-searches {
+    @include mixins.flexbox-container();
+
     list-style-type: none;
     padding: 0;
     margin: 1rem auto 0 auto;
     max-width: 62rem;
-    display:flex;
-    gap: 0.75rem;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    
     &.hidden {
         display: none;
     }
 
     li {
-        background-color: $bg-card;
-        padding: 0.5rem 1rem;
-        border-radius: 1.25rem;
-        box-shadow: $shadow;
-        font-size: 1rem;
-        color: $text-main;
-        cursor: pointer;
-        transition: background-color 0.2s;
-
-        &:hover {
-            background-color: $accent;
-            color: #1a1a1a;
-        }
+        @include mixins.card-style($radius: 2);
+        @include mixins.font-style(1, $text-main);
+        @include mixins.hover-effect();
     }
 }
