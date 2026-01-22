@@ -12,25 +12,27 @@ body {
 }
 
 header {
-  background-color: #2e3035;
-  padding: 2rem 1.25rem;
   text-align: center;
+  background-color: #2e3035;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 0rem;
 }
 header h1 {
-  margin: 0 0 2rem 0;
-  color: #81b29a;
   font-size: 2rem;
+  color: #81b29a;
+  margin: 0 0 1rem 0;
 }
 
 .functionality {
   display: flex;
-  justify-content: center;
   gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
   width: 90%;
   max-width: 40rem;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
 .search-label.hidden {
@@ -38,10 +40,11 @@ header h1 {
 }
 
 .search-input {
-  border-radius: 1.5rem;
+  font-size: 1rem;
+  color: #000;
   padding: 0.75rem 1.25rem;
   border: 2px solid transparent;
-  font-size: 1rem;
+  border-radius: 1.5rem;
   width: 100%;
   max-width: 20rem;
   outline: none;
@@ -52,52 +55,58 @@ header h1 {
 }
 
 .search-button {
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.search-button:hover {
+  background-color: #81b29a;
+  color: #fff;
+}
+.search-button:hover span {
+  color: #fff;
+}
+.search-button {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border: none;
   border-radius: 3rem;
   background-color: #81b29a;
-  color: #1a1a1a;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
-}
-.search-button:hover {
-  background-color: #9cc5b1;
 }
 
 .search-error {
-  color: #ff6b6b;
-  margin-top: 0.75rem;
   font-size: 1rem;
-  height: 1.25rem;
+  color: #ff6b6b;
 }
 
 .recent-searches {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
   list-style-type: none;
   padding: 0;
   margin: 1rem auto 0 auto;
   max-width: 62rem;
-  display: flex;
-  gap: 0.75rem;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 .recent-searches.hidden {
   display: none;
 }
 .recent-searches li {
   background-color: #2e3035;
-  padding: 0.5rem 1rem;
-  border-radius: 1.25rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0.75rem;
+  border-radius: 2rem;
   font-size: 1rem;
   color: #f0f0f0;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .recent-searches li:hover {
   background-color: #81b29a;
+  color: #1a1a1a;
+}
+.recent-searches li:hover span {
   color: #1a1a1a;
 }
 
@@ -111,46 +120,56 @@ header h1 {
 
 .favorites-toggle {
   background-color: #2e3035;
-  color: #f0f0f0;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
   font-size: 1rem;
-  transition: background-color 0.2s;
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .favorites-toggle:hover {
   background-color: #81b29a;
   color: #1a1a1a;
 }
+.favorites-toggle:hover span {
+  color: #1a1a1a;
+}
+.favorites-toggle {
+  border: none;
+}
 
 .favorites-list {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
   list-style: none;
   padding: 0;
   margin-top: 0.75rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
 }
 .favorites-list.hidden {
   display: none;
 }
 .favorites-list li {
   background-color: #2e3035;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   padding: 0.75rem;
   border-radius: 0.75rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  width: 7rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .favorites-list li:hover {
   background-color: #81b29a;
-  cursor: pointer;
+  color: #1a1a1a;
 }
 .favorites-list li:hover span {
   color: #1a1a1a;
+}
+.favorites-list li {
+  text-align: center;
+  width: 7rem;
 }
 .favorites-list li span {
   font-size: 0.9rem;
@@ -165,36 +184,42 @@ header h1 {
 
 .countries-list {
   list-style-type: none;
+  max-width: 40rem;
   padding: 1.25rem;
   margin: 1.25rem auto;
   display: flex;
-  flex-direction: column;
-  max-width: 40rem;
   gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 .countries-list li {
   background-color: #2e3035;
-  border-radius: 0.75rem;
-  padding: 0.75rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  max-width: 40rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 40rem;
+  align-items: center;
 }
 
 .card-image {
-  flex: 1 1 100px;
   display: flex;
+  gap: 0.75rem;
   justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 1 100px;
   align-items: center;
 }
 .card-image img {
+  height: auto;
   width: 100%;
   max-width: 15rem;
-  height: auto;
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -202,31 +227,35 @@ header h1 {
 .card-details {
   flex: 1 1 185px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-header {
-  width: 90%;
   display: flex;
+  gap: 0.75rem;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
   align-items: center;
+  width: 90%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
 }
 .card-header h1 {
-  margin: 0;
   font-size: 1.8rem;
   color: #f0f0f0;
+  margin: 0;
 }
 
 .star-btn {
-  background: transparent;
-  border: none;
   font-size: 2rem;
   color: #555;
+  background: transparent;
+  border: none;
   cursor: pointer;
   transition: color 0.2s;
   line-height: 1;
@@ -239,10 +268,12 @@ header h1 {
 }
 
 .card-info {
-  width: 90%;
   display: flex;
-  flex-direction: column;
   gap: 0.25rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 90%;
   text-align: left;
 }
 .card-info p {
@@ -250,11 +281,11 @@ header h1 {
   color: #aaaaaa;
 }
 .card-info a {
-  color: #81b29a;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px dashed #81b29a;
   width: fit-content;
+  font-weight: bold;
+  text-decoration: none;
+  color: #81b29a;
+  border-bottom: 1px dashed #81b29a;
 }
 .card-info a:hover {
   color: #9cc5b1;

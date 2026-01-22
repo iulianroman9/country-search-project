@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+@mixin font-style($fontSize: 2, $color: $text-main) {
+    font-size: #{$fontSize}rem;
+    color: $color;
+}
+
+@mixin flexbox-container($gap: 0.75, 
+                        $justifyContent: center, 
+                        $flexWrap: wrap,
+                        $flexDirection: row) {
+    display: flex;
+    gap: #{$gap}rem;
+    justify-content: $justifyContent;
+    flex-wrap: $flexWrap;
+    flex-direction: $flexDirection;
+}
+
+@mixin card-style($padding: 0.75, $radius: 0.75) {
+    background-color: $bg-card;
+    box-shadow: $shadow;
+    padding: #{$padding}rem;
+    border-radius: #{$radius}rem;
+}
+
+@mixin hover-effect($bgHover: $accent, $textColor: #1a1a1a) {
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: $bgHover;
+        color: $textColor;
+
+        span {
+            color: $textColor;
+        }
+    }
+}
