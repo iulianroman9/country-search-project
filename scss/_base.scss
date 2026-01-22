@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins';
 
 * {
     box-sizing: border-box;
@@ -11,4 +12,10 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    @include mixins.flexbox-container($gap: 0, $flexDirection: column, $justifyContent: space-between);
+}
+
+main {
+    flex: 2 1;
+    @include mixins.flexbox-container($gap: 0, $flexDirection: column, $justifyContent: flex-start);
 }

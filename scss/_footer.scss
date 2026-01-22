@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'mixins';
+
+footer {
+    @include mixins.flexbox-container;
+    @include mixins.card-style(1,0);
+
+    h1 {
+        @include mixins.font-style(1, $accent);
+    }
+}
