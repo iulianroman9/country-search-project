@@ -275,8 +275,10 @@ header h1 {
   transition: color 0.2s;
   line-height: 1;
 }
-.star-btn:hover {
-  color: #ffd700;
+@media (hover: hover) {
+  .star-btn:hover {
+    color: #ffd700;
+  }
 }
 .star-btn.active {
   color: #ffd700;

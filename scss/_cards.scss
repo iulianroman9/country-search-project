@@ -58,8 +58,11 @@
     transition: color 0.2s;
     line-height: 1;
 
-    &:hover {
-        color: #ffd700;
+    @media (hover: hover)
+    {
+        &:hover {
+            color: #ffd700;
+        }
     }
 
     &.active {
