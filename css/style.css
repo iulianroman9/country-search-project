@@ -72,12 +72,14 @@ header h1 {
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.search-button:hover {
-  background-color: #81b29a;
-  color: #fff;
-}
-.search-button:hover span {
-  color: #fff;
+@media (hover: hover) {
+  .search-button:hover {
+    background-color: #81b29a;
+    color: #fff;
+  }
+  .search-button:hover span {
+    color: #fff;
+  }
 }
 .search-button {
   padding: 0.75rem 2rem;
@@ -116,12 +118,14 @@ header h1 {
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.recent-searches li:hover {
-  background-color: #81b29a;
-  color: #1a1a1a;
-}
-.recent-searches li:hover span {
-  color: #1a1a1a;
+@media (hover: hover) {
+  .recent-searches li:hover {
+    background-color: #81b29a;
+    color: #1a1a1a;
+  }
+  .recent-searches li:hover span {
+    color: #1a1a1a;
+  }
 }
 
 .favorites {
@@ -142,12 +146,14 @@ header h1 {
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.favorites-toggle:hover {
-  background-color: #81b29a;
-  color: #1a1a1a;
-}
-.favorites-toggle:hover span {
-  color: #1a1a1a;
+@media (hover: hover) {
+  .favorites-toggle:hover {
+    background-color: #81b29a;
+    color: #1a1a1a;
+  }
+  .favorites-toggle:hover span {
+    color: #1a1a1a;
+  }
 }
 .favorites-toggle {
   border: none;
@@ -174,12 +180,14 @@ header h1 {
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.favorites-list li:hover {
-  background-color: #81b29a;
-  color: #1a1a1a;
-}
-.favorites-list li:hover span {
-  color: #1a1a1a;
+@media (hover: hover) {
+  .favorites-list li:hover {
+    background-color: #81b29a;
+    color: #1a1a1a;
+  }
+  .favorites-list li:hover span {
+    color: #1a1a1a;
+  }
 }
 .favorites-list li {
   text-align: center;
