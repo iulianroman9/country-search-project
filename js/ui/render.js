@@ -35,6 +35,7 @@ export function showSearchHistory() {
 }
 
 export function displayCountries(countries, favToggle) {
+    searchInput.ariaInvalid = 'false';
     countriesList.innerHTML = '';
     errorContainer.textContent = '';
 
@@ -141,6 +142,7 @@ export function setupFavoritesToggle() {
 export function displayError(message) {
     countriesList.innerHTML = '';
     errorContainer.textContent = message;
+    searchInput.ariaInvalid = 'true';
 }
 
 export function getSearchValue() {
